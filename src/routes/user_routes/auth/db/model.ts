@@ -1,5 +1,6 @@
-import { Optional } from "sequelize";
-import { Column, DataType, Model, Table } from "sequelize-typescript";
+import { NonAttribute, Optional } from "sequelize";
+import { Column, DataType, HasMany, Model, Table } from "sequelize-typescript";
+import UserPointsModel from "../../users/db/model";
 
 
 // export interface UserAttributes {
@@ -53,4 +54,7 @@ export class User extends Model{
         allowNull: false
     })
     password: string
+
+    @HasMany(()=>UserPointsModel, "userID")
+    routs?: NonAttribute<UserPointsModel>
 }

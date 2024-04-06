@@ -1,6 +1,6 @@
 
 import { Optional } from "sequelize";
-import { Model, Table, Column, DataType, ForeignKey } from "sequelize-typescript";
+import { Model, Table, Column, DataType, ForeignKey, BelongsTo } from "sequelize-typescript";
 import { User } from "../../auth/db/model"
 
 export interface UserAttributes {
@@ -55,7 +55,9 @@ class UserPointsModel extends Model {
         type: DataType.INTEGER,
         field: "userID"
     })
-    @ForeignKey(( ) => User)
+
+    // @BelongsTo(() => User)
+    @ForeignKey(() => User)
     declare userID: number
 }
 

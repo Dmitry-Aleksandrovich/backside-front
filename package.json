@@ -11,13 +11,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/cookie-parser": "^1.4.7",
+    "@types/jsonwebtoken": "^9.0.6",
     "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
     "express": "^4.19.2",
     "joi": "^17.12.3",
+    "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.9.3",
     "nodemailer": "^6.9.13",
     "sequelize": "^6.37.2",
     "sequelize-typescript": "^2.1.6",
+    "ts-dotenv": "^0.9.1",
     "typescript": "^5.4.4"
   },
   "devDependencies": {
