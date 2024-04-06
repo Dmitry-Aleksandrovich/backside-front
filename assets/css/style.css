@@ -261,5 +261,25 @@ header{
 }
 
 .route{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 125px 0px 75px 0px;
+    line-height: 30px;
+}
 
+#route-title{
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0px 0px 40px 0px;
+}
+
+#route-text{
+    font-size: 24px;
+    width: 700px;
+    display: flex;
+  text-align: center;
+  line-height: 35px;
+  margin: 0px 0px 75px 0px;
 }
