@@ -101,11 +101,11 @@ a:hover {
     width: 100%;
 }
 
-h1 {
-    position: absolute;
-    top: 250px;
-    width: 100%;
-}
+/* h1 { */
+    /* position: center; */
+    /* top: 250px; */
+    /* width: 100%; */
+/* } */
 
 h1 {
     color: #fff;
@@ -121,31 +121,41 @@ h1 {
     align-items: center;
 }
 
-
-
-header{
-    padding: 0px 0px 650px 0px;
+.header-tool{
+    height: 100%;
+    /* top: 200vh; */
+    /* align-items: center; */
+    /* vertical-align: middle; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
 }
 
+header{
+    /* padding: 0px 0px 650px 0px; */
+    /* padding-bottom: 600px; */
+    height: 100%;
+    background-image: url("/backside-front/assets/image/header-mount.jpeg");
+}
+
+
 .header-button {
-    /* position: absolute; Устанавливаем кнопке позицию absolute */
+    /* position: ; 
     top: 350px;
-    width: 100%;
+    /* width: 100%; */
     font-size: 30px;
     padding: 20px 35px;
     border-radius: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    
+
 }
 
 #qwert{
     padding: 40px, 350px;
     background-color: #FFD900;
     border-radius: 30px;
-    color:#000  
+    color:#000;
 }
 
 #qwert:hover{
@@ -156,5 +166,67 @@ header{
 
 
 .main-info{
-   background-color: #000; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px 0px 0px 0px;
+}
+
+.main-info-location{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#main-info-location-icon{
+    height: 72px;
+    width: 72px;
+}
+
+.main-info-title{
+    font-size: 20px;
+}
+
+.main-info-text{
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 20px;
+}
+
+.main-info-time{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#main-info-time-icon{
+    height: 72px;
+    width: 72px;
+}
+
+.main-info-cost{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#main-info-cost-icon{
+    height: 72px;
+    width: 72px;
+}
+
+.main-info-travel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#main-info-travel-icon{
+    height: 72px;
+    width: 72px;
 }
