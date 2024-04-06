@@ -348,8 +348,8 @@ input[type=text]:focus, input[type=password]:focus {
 
 .registerbtn:hover {
   opacity:1;
-  fill: #fff;
-  background-color: #fff;
+  color: #000;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Add a blue text color to links */
