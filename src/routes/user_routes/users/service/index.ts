@@ -14,6 +14,19 @@ export async function getUserRoutes(userId: number): Promise<user_route[]> {
     return route_points
 }
 
+export async function getUserRoute(userId: number, routeID: number): Promise<user_route> {
+
+    const db_data = await UserPointsModel.findAll({where: { userID: userId, id: routeID}})
+    const route_point = db_data.map((val) => {
+        return {
+            startPoint: { lat: val.startPointLat, lon: val.startPointLon },
+            destPoint: { lat: val.destPointLat, lon: val.destPointLon }
+        }
+    })
+
+    return route_point[0]
+}
+
 export async function addUserRoute(user_route: user_route, userId: number) {
 
     console.log(user_route);
