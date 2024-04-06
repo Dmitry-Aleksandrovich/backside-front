@@ -230,3 +230,19 @@ header{
     height: 72px;
     width: 72px;
 }
+
+.mount-mains{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mount-virt{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    width: 30%;
+}
