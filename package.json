@@ -11,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "^4.19.2",
+    "joi": "^17.12.3",
     "mysql2": "^3.9.3",
+    "nodemailer": "^6.9.13",
     "sequelize": "^6.37.2",
     "sequelize-typescript": "^2.1.6",
     "typescript": "^5.4.4"

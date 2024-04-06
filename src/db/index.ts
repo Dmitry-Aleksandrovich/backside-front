@@ -1,10 +1,11 @@
 
 import { Sequelize } from "sequelize-typescript";
 import { config, dialect} from "./db.config"
-import UserPointsModel  from "./model";
+import UserPointsModel  from "../routes/user_routes/users/db/model";
+import { User } from "../routes/user_routes/auth/db/model";
 
 class Database {
-    public sequelize: Sequelize | undefined;
+    public sequelize: Sequelize;
 
     constructor() {
         this.connectToDatabase();
@@ -23,7 +24,8 @@ class Database {
             //     acquire: config.pool.acquire,
             //     idle: config.pool.idle
             // },
-            models: [UserPointsModel]
+            models: [UserPointsModel, User],
+            
         });
 
         await this.sequelize
@@ -34,6 +36,8 @@ class Database {
             .catch((err) => {
                 console.error("Unable to connect to the Database:", err);
             });
+        await this.sequelize
+        .sync()
     }
 }
 

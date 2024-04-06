@@ -1,15 +1,17 @@
 
 import { Optional } from "sequelize";
-import { Model, Table, Column, DataType } from "sequelize-typescript";
+import { Model, Table, Column, DataType, ForeignKey } from "sequelize-typescript";
+import { User } from "../../auth/db/model"
 
-interface PersonAttributes {
+export interface UserAttributes {
+    id: number;
     startPointLat: number;
     startPointLon: number;
     destPointLat: number;
     destPointLon: number;
 }
 
-// interface PersonCreatesAttributes extends Optional<PersonAttributes, "id"> {}
+interface PersonCreatesAttributes extends Optional<UserAttributes, "id"> {}
 
 
 @Table({
@@ -48,6 +50,13 @@ class UserPointsModel extends Model {
         field: "destPointLon"
     })
     declare destPointLon: number;
+
+    @Column({
+        type: DataType.INTEGER,
+        field: "userID"
+    })
+    @ForeignKey(( ) => User)
+    declare userID: number
 }
 
 export default UserPointsModel
