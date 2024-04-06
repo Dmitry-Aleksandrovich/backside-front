@@ -1,0 +1,167 @@
+openapi: 3.0.3
+info:
+  title: BACKSIDE Tour
+  description: "Backsite toure api documetation"
+  termsOfService: https//google.com
+  version: 0.9.9.9.9999
+tags:
+  - name: Auth
+    description: Авторизация пользователя
+  - name: Tour
+    description: Пользовательские туры
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Logs user into the system
+      description: ''
+      operationId: login
+      requestBody:
+        description: Update an existent user in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "success login"
+
+        '404':
+          description: Invalid username/password supplied
+  /auth/regis:
+    post:
+      tags:
+        - Auth
+      summary: Logs user into the system
+      description: ''
+      operationId: login
+      requestBody:
+        description: Update an existent user in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserReg'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "success register"
+
+        '404':
+          description: Invalid data supplied
+  /tour:
+    get:
+      tags:
+        - Tour
+      summary: получение пользовательских туров
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tour'
+        '400':
+          description: Invalid username supplied
+        '404':
+          description: User not found
+    post:
+      tags:
+        - Tour
+      summary: добавить новый маршрут
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tour'
+      responses:
+        '200':
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tour'
+        '404':
+          description: error
+          content:
+            application/json:
+              example:
+                "{message: non valide data}"
+  /tour/{tourID}:
+    get:
+      tags:
+        - Tour
+      summary: получение пользовательских туров
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tour'
+        '400':
+          description: Invalid username supplied
+        '404':
+          description: User not found
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        email:
+          type: string
+          example: john@email.com
+        password:
+          type: string
+          example: '12345'
+    Tour:
+      type: object
+      properties:
+        startPoint:
+          type: object
+          properties:
+            lat:
+              type: number
+              example: 78.88
+            lon:
+              type: number
+              example: 55.56
+        destPoint:
+          type: object
+          properties:
+            lat:
+              type: number
+              example: 78.88
+            lon:
+              type: number
+              example: 55.56
+    UserReg:
+      type: object
+      properties:
+        email:
+          type: string
+          example: john@email.com
+        password:
+          type: string
+          example: '12345'
+        name:
+          type: string
+          example: "some somes"
+    
